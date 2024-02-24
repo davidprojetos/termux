@@ -16,6 +16,7 @@ Documents
 Downloads
 .bundle               
 Games
+x
 .cache                
 Music
 .cargo                
