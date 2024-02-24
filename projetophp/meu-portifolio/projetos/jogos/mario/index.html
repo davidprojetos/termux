@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/icon-mario.jpg">
+    <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+    <title>Mario</title>
+</head>
+<body onunload="play()" 
+onload="play()"
+unload="play()">
+    <div class="game-board">
+        <img onclick="play()" src="imagens/clouds.png" class="nuvens">
+        <img src="imagens/mario.gif" alt="" class="mario jump">
+        <img src="imagens/pipe.gif" alt="" class="pipe">
+     
+    </div>
+<audio  id="music">
+    <source src="audio/mario.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio  id="over">
+    <source src="audio/game-over.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<a href="../../../index.html" target="_blank" rel="noopener noreferrer"></a>
+	  <a class="up arr" onclick="jump()">
+	    <i class="chevron up"></i></a>
+	  <br />
+
+</body>
+<script src="script.js" defer></script>
+</html>

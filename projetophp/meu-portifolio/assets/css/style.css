@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+/*CSS media query dentro de um stylesheet*/
+@media (max-width: 1000px) {
+  .nav-bar {
+    padding: 1.5rem 4rem;
+}
+.nav-item {
+    display: none;
+}
+.login-button {
+    display: none;
+}
+.mobile-menu-icon {
+    display: block;
+}
+.mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+}
+.mobile-menu .login-button {
+    display: block;
+    padding: 1rem 2rem;
+}
+.mobile-menu .login-button button {
+    width: 100%;
+}
+.open {
+    display: block;
+}
+  #olhando {
+    height: 200px;
+    width: 98px;
+    display: block;
+    animation: imagem 7s ease forwards;
+    position: absolute;
+    margin-top: 100px;
+  }
+  .google {
+    margin: auto;
+    font-size: 6pt;
+    color: red;
+  }
+  .hard img {
+    display: block;
+    width: 5px;
+    height: 5px;
+  }
+  .soft img {
+    display: block;
+    width: 5px;
+    height: 5px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  animation: gge 15s ease infinite;
+  background: linear-gradient(-5deg, #0a59ed, #d16b3f, #250d06, #2a12c5) no-repeat;
+  background-size: 1000vw 1000vh;
+}
+
+header {
+  background-color: #24252a;
+  box-shadow: 0px 3px 10px #464646;
+  position: fixed;
+ 
+}
+
+.nav-bar {
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+}
+
+.logo {
+  display: flex;
+align-items: rigth;
+}
+
+.logo h1 {
+  color: #fff;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.login-button button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #0187a7;
+}
+
+.login-button button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.dd {
+  margin-top: 60px;
+  display: block;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  white-space: nowrap;
+}
+
+@keyframes gg {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.dd img {
+  height: 660px;
+  width: 298px;
+  display: block;
+  animation: imagem 7s ease forwards;
+}
+
+@keyframes imagem {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+h1 {
+  display: block;
+  margin-left: 298px;
+  margin-top: -650px;
+  position: relative;
+}
+
+.google {
+  position: relative;
+  color: lime;
+  font-family: "Courier";
+  font-size: 26pt;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60vw;
+  animation: type 5s steps(60, end);
+}
+
+.google:nth-child(2) {
+  animation: type2 9s steps(60, end);
+}
+
+.and {
+  animation: blink 1s infinite;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 90;
+  }
+}
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+::-moz-selection {
+  background: black;
+}
+::selection {
+  background: black;
+}
+
+.hard {
+  display: inline-block;
+  position: absolute;
+  margin-left: 177px;
+  margin-top: 15%;
+}
+
+.hard img {
+  width: 100px;
+  height: 100px;
+}
+
+#cssicon {
+  width: 130px;
+  height: 119px;
+  padding: 0;
+  margin-top: 0px;
+  position: relative;
+}
+
+#phpicon {
+  width: 115px;
+  height: 119px;
+  padding: 0;
+  margin-top: 0px;
+  position: relative;
+}
+
+#sqlicon {
+  width: 115px;
+  height: 100px;
+  padding: 0;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.soft {
+  display: inline-block;
+  position: absolute;
+  margin-left: 177px;
+  margin-top: 30%;
+}
+
+.soft img {
+  width: 100px;
+  height: 100px;
+}
+
+#python {
+  margin-left: -20px;
+}
+
+#android {
+  margin-right: 3px;
+  margin-left: 22px;
+}

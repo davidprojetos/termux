@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+</head>
+<body>
+
+<h2>Formulário</h2>
+
+<form th:object="${registro}" th:action="@{/crud/salvar}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <label>Campo1:</label>
+    <input type="text" th:field="*{campo1}" required/><br/>
+
+    <label>Campo2:</label>
+    <input type="text" th:field="*{campo2}" required/><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<br/>
+<a href="/crud/listar">Voltar para a lista</a>
+
+</body>
+</html>

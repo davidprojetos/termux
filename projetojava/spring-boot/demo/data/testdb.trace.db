@@ -1,0 +1,18 @@
+2024-01-14 04:50:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]
+2024-01-14 04:50:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]
+2024-01-14 04:50:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]
+2024-01-14 04:50:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]
+2024-01-14 04:50:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]
+2024-01-14 04:51:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REGISTRO" not found; SQL statement:
+select registro0_.id as id1_0_, registro0_.campo1 as campo2_0_, registro0_.campo2 as campo3_0_ from registro registro0_ [42102-200]

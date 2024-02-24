@@ -1,0 +1,97 @@
+body{
+    width: 100vw;
+    height: 100vh; 
+}
+
+
+.porti{
+    height: 520px;
+    width: 935px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+img{
+   border-radius: 49px;
+    background: linear-gradient(145deg, #5fd0d0, #50afaf);
+    box-shadow:  14px 14px 43px #367676, -14px -14px 43px #7cffff;  
+}
+.navega{
+    left: 50%;
+    bottom: 20px;
+    position: absolute;
+    display:flex; 
+    transform: translate(-50%); 
+}
+
+.bar{
+    width: 70px;
+    height: 17px;
+    border: 2px solid  #2a12c5;
+    margin: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.bar:hover{
+    background:  #2a12c5;
+}
+
+input{
+    display: none;
+}
+
+.slides{
+    display: flex;
+    width: 1000%;
+    height: 100%;
+}
+.slide{
+    width: 10%;
+    transition: .7s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#radio1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .s1{
+    margin-left: -10%;
+}
+
+#radio3:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#radio4:checked ~ .s1{
+    margin-left: -30%;
+}
+
+#radio5:checked ~ .s1{
+    margin-left: -40%;
+}
+
+#radio6:checked ~ .s1{
+    margin-left: -50%;
+}
+#radio7:checked ~ .s1{
+    margin-left: -60%;
+}
+#radio8:checked ~ .s1{
+    margin-left: -70%;
+}
+#radio9:checked ~ .s1{
+    margin-left: -80%;
+}
+#radio10:checked ~ .s1{
+    margin-left: -90%;
+}
