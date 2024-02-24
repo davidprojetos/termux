@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+</head>
+<body>
+    <h1>Resultados da Pesquisa</h1>
+
+    <form method="post" action="/">
+        <label for="termo">Digite o termo de pesquisa:</label>
+        <input type="text" id="termo" name="termo" required>
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    {% if resultados %}
+        <ul>
+            {% for resultado in resultados %}
+                <li>
+                    <strong>Nome da música:</strong> {{ resultado.trackName }}<br>
+                    <strong>Nome do artista:</strong> {{ resultado.artistName }}<br>
+                    <strong>Link da arte do álbum:</strong> <img src="{{ resultado.artworkUrl100 }}" alt="Arte do Álbum"><br>
+                    <strong>Link do trailer da música:</strong>
+                    <audio controls>
+                        <source src="{{ resultado.previewUrl }}" type="audio/mpeg">
+                        Seu navegador não suporta a tag de áudio.
+                    </audio>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum resultado encontrado.</p>
+    {% endif %}
+</body>
+</html>
