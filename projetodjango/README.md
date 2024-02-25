@@ -9,3 +9,5 @@
 ```sh
   python menage.py runserver
 ```
+
+git add . && git commit -m "add " && git push
