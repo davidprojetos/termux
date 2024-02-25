@@ -10,6 +10,11 @@
   python manage.py runserver
 ```
 
+### Start project
+
+```sh
+  python manage.py migrate
+```
 
 ### Git Push
 ```sh
