@@ -1,0 +1,1 @@
+python menage.py runserver
