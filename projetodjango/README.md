@@ -7,7 +7,12 @@
 ### Start project
 
 ```sh
-  python menage.py runserver
+  python manage.py runserver
 ```
 
-git add . && git commit -m "add " && git push
+
+### Git Push
+```sh
+  git add . && git commit -m "add " && git push
+```
+
