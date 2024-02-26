@@ -63,6 +63,19 @@ def limpar_tabela():
         db.session.rollback()
         return "Erro ao limpar a tabela: " + str(e)
 
+@app.route('/limpar-downloads', methods=['POST'])
+def limpar_downloads():
+    folder = 'downloads'
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(f"Erro ao excluir o arquivo {file_path}: {e}")
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
