@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download de Áudios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Download de Áudios</h1>
+        <form action="/download" method="post">
+            <input type="text" id="url" name="url" placeholder="Digite a URL do YouTube">
+            <button type="submit">Baixar</button>
+        </form>
+    </nav>
+
+    <div class="audio-list">
+        <h2>Áudios Baixados</h2>
+        <ul>
+            {% for audio in audios %}
+                <li>
+                    <!--<form action="{{ url_for('edit_audio', audio_id=audio.id) }}" method="post">
+                        <input type="text" name="new_title" value="{{ audio.title }}" placeholder="Novo título">
+                        <button type="submit">Salvar</button>
+                    </form>-->
+                    <span class="audio-title">{{ audio.title }}</span>
+                    <a href="{{ url_for('play', audio_id=audio.id) }}" class="play-button">Reproduzir</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <form action="/limpar-tabela" method="post">
+    <button type="submit">Limpar Tabela</button>
+</form>
+
+</body>
+</html>
