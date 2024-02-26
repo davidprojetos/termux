@@ -1,43 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download de Áudios</title>
+    <title>Lista de Reprodução</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav>
-        <h1>Download de Áudios</h1>
-        <form action="/download" method="post">
-            <input type="text" id="url" name="url" placeholder="Digite a URL do YouTube">
+        <h1>Lista de Reprodução</h1>
+        <form action="/download" method="POST">
+            <input type="text" name="url" placeholder="URL do vídeo do YouTube">
             <button type="submit">Baixar</button>
         </form>
     </nav>
-
     <div class="audio-list">
-        <h2>Áudios Baixados</h2>
+        <h2>Áudios</h2>
         <ul>
             {% for audio in audios %}
-                <li>
-                    <!--<form action="{{ url_for('edit_audio', audio_id=audio.id) }}" method="post">
-                        <input type="text" name="new_title" value="{{ audio.title }}" placeholder="Novo título">
-                        <button type="submit">Salvar</button>
-                    </form>-->
-                    <span class="audio-title">{{ audio.title }}</span>
-                    <a href="{{ url_for('play', audio_id=audio.id) }}" class="play-button">Reproduzir</a>
-                </li>
+            <li>
+                <form action="{{ url_for('edit_audio', audio_id=audio.id) }}" method="POST">
+                    <input type="text" name="new_title" value="{{ audio.title }}">
+                    <button type="submit">Editar</button>
+                </form>
+                <a href="{{ url_for('play', audio_id=audio.id) }}" class="play-button">Reproduzir</a>
+            </li>
             {% endfor %}
         </ul>
-        <form action="/limpar-downloads" method="post">
-          <button type="submit">Limpar Downloads</button>
-        </form> 
-        <form action="/limpar-tabela" method="post">
-            <button type="submit">Limpar Tabela</button>
-        </form
->
     </div>
-    
-
+    <form action="/limpar-downloads" method="POST">
+        <button type="submit">Limpar Downloads</button>
+    </form>
+    <form action="/limpar-tabela" method="POST">
+        <button type="submit">Limpar Tabela</button>
+    </form>
 </body>
 </html>
