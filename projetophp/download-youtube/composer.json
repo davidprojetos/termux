@@ -1,0 +1,17 @@
+{
+    "name": "u0_a783/download-youtube",
+    "autoload": {
+        "psr-4": {
+            "U0A783\\DownloadYoutube\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "davidprojetos",
+            "email": "davidffsousaff@gmail.com"
+        }
+    ],
+    "require": {
+        "norkunas/youtube-dl-php": "dev-master"
+    }
+}
