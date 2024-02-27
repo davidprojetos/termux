@@ -21,6 +21,7 @@
             <li>
                 <form action="{{ url_for('edit_audio', audio_id=audio.id) }}" method="POST">
                     <input type="text" name="new_title" value="{{ audio.title }}">
+<input type="text" name="new_file" value="{{ audio.file_name }}">
                     <button type="submit">Editar</button>
                 </form>
                 <a href="{{ url_for('play', audio_id=audio.id) }}" class="play-button">Reproduzir</a>
@@ -36,3 +37,55 @@
     </form>
 </body>
 </html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áudios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Lista de Áudios</h1>
+    </nav>
+    <div class="audio-list">
+        <h2>Áudios Adicionados</h2>
+        <ul>
+            {% for audio in audios %}
+            <li>
+                <form action="/edit/{{ audio.id }}" method="POST">
+                    <input type="text" name="new_title" value="{{ audio.title }}">
+                    <button type="submit">Editar Nome</button>
+                </form>
+                <a href="{{ url_for('play', audio_id=audio.id) }}" class="play-button">Reproduzir</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>Adicionar Novo Áudio</h2>
+        <form action="/download" method="POST">
+            <input type="text" name="url" placeholder="URL do vídeo do YouTube">
+            <button type="submit">Baixar e Adicionar</button>
+        </form>
+    </div>
+    <div>
+        <h2>Limpar Downloads</h2>
+        <form action="/limpar-downloads" method="POST">
+            <button type="submit">Limpar</button>
+        </form>
+    </div>
+    <div>
+        <h2>Limpar Tabela de Áudios</h2>
+        <form action="/limpar-tabela" method="POST">
+            <button type="submit">Limpar</button>
+        </form>
+    </div>
+</body>
+</html>
+-->
