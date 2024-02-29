@@ -1,0 +1,6 @@
+<dependency>
+    <groupId>com.sapher.youtubedl</groupId>
+    <artifactId>youtube-dl-java</artifactId>
+    <version>0.4.0</version>
+</dependency>
+

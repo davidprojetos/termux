@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download de Mídia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,12 +28,6 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         input[type="text"] {
@@ -74,22 +67,48 @@
             background-color: #45a049;
         }
 
-        .fas {
-            margin-right: 5px;
+        .audio-link {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><i class="fas fa-download"></i> Escolha o que baixar</h1>
-        <form action="/download" method="POST">
-            <input type="text" name="url" placeholder="Cole aqui a URL do vídeo do YouTube">
-            <select name="format">
-                <option value="audio">Baixar Áudio</option>
-                <option value="video">Baixar Vídeo</option>
-            </select>
-            <button type="submit"><i class="fas fa-download"></i> Baixar</button>
-        </form>
+        <h1>Download de Mídia</h1>
+        <input type="text" id="url" placeholder="Cole aqui a URL do vídeo do YouTube">
+        <button onclick="getAudioLink()">Obter Link de Áudio</button>
+        <div id="audioLink" class="audio-link"></div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ytdl-core/4.6.2/ytdl.core.js"></script>
+    <script>
+        function getAudioLink() {
+            var url = document.getElementById('url').value;
+
+            if (!url) {
+                alert('Por favor, insira a URL do vídeo do YouTube.');
+                return;
+            }
+
+            ytdl.getInfo(url, function(err, info) {
+                if (err) {
+                    console.error(err);
+                    alert('Ocorreu um erro ao obter informações do vídeo.');
+                    return;
+                }
+
+                var formats = info.formats.filter(format => format.container === 'mp4');
+                var audioFormat = formats.find(format => format.audioBitrate);
+
+                if (!audioFormat) {
+                    alert('Não foi possível encontrar o formato de áudio disponível para download.');
+                    return;
+                }
+
+                var audioLink = audioFormat.url;
+                document.getElementById('audioLink').innerHTML = '<a href="' + audioLink + '" target="_blank">Link de Áudio</a>';
+            });
+        }
+    </script>
 </body>
 </html>
