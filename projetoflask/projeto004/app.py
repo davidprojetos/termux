@@ -39,7 +39,7 @@ def download():
         db.session.commit()
         return redirect(url_for('index'))
 
-@app.route('/play/<int:audio_id>')
+@app.route('/play/<int:audio_id>', methods=['GET', 'POST'])
 def play(audio_id):
     audio = Audio.query.get(audio_id)
     file_path = os.path.join('downloads', f"{audio.file_name}.mp3")

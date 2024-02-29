@@ -1,46 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset CSS */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
 }
 
 nav {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 20px 0;
     text-align: center;
 }
 
 nav h1 {
     margin: 0;
+    font-size: 24px;
 }
 
 nav form {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav input[type="text"] {
-    padding: 5px;
+    padding: 12px;
     width: 300px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
 }
 
 nav button {
-    padding: 5px 10px;
+    padding: 12px 24px;
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 25px;
     cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #45a049;
 }
 
 .audio-list {
     margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .audio-list h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
 }
 
 .audio-list ul {
@@ -49,34 +75,49 @@ nav button {
 }
 
 .audio-list li {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.audio-list li form {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-.audio-list li input[type="text"] {
-    width: 100%;
-    padding: 5px;
-}
-
 .audio-list li .play-button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .audio-list li .play-button:hover {
     background-color: #45a049;
+}
+
+.clear-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.clear-buttons-container form {
+    margin: 0 10px;
+}
+
+.clear-button {
+    padding: 12px 24px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+    background-color: #d32f2f;
 }
