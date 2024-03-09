@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação de Palavras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #guessInput {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Adivinhação de Palavras</h1>
+    <p>Tente adivinhar a palavra com base na dica:</p>
+    <p id="hint"></p>
+    <input type="text" id="guessInput">
+    <button onclick="checkGuess()">Enviar Palpite</button>
+    <p id="message"></p>
+
+    <script>
+        const words = [
+            { hint: 'Animal conhecido por sua coragem e força.', answer: 'leão' },
+            { hint: 'Instrumento musical de cordas.', answer: 'violino' },
+            { hint: 'País famoso pela Torre Eiffel.', answer: 'frança' },
+            { hint: 'Fruta amarela e doce.', answer: 'banana' }
+        ];
+
+        const hintElement = document.getElementById('hint');
+        const guessInput = document.getElementById('guessInput');
+        const messageElement = document.getElementById('message');
+        let currentWordIndex = 0;
+
+        function displayHint() {
+            hintElement.textContent = words[currentWordIndex].hint;
+        }
+
+        function checkGuess() {
+            const guess = guessInput.value.trim().toLowerCase();
+            const answer = words[currentWordIndex].answer.toLowerCase();
+
+            if (guess === answer) {
+                messageElement.textContent = 'Parabéns! Você acertou!';
+            } else {
+                messageElement.textContent = 'Ops! Tente novamente.';
+            }
+
+            guessInput.value = '';
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            displayHint();
+        }
+
+        displayHint();
+    </script>
+</body>
+</html>

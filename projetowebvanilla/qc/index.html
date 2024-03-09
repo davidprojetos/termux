@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra-cabeça Deslizante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #puzzleContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            margin: auto;
+        }
+        
+        .piece {
+            width: 90px;
+            height: 90px;
+            background-color: #f8f9fa;
+            border: 1px solid #333;
+            margin: 5px;
+            line-height: 90px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .empty {
+            visibility: hidden;
+        }
+        
+        .solved {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quebra-cabeça Deslizante</h1>
+    <div id="puzzleContainer"></div>
+    <button onclick="shuffle()">Embaralhar</button>
+
+    <script>
+        const puzzleContainer = document.getElementById('puzzleContainer');
+        const pieces = [];
+        let emptyPiece;
+
+        function createPuzzle() {
+            puzzleContainer.innerHTML = '';
+            pieces.length = 0;
+
+            for (let i = 0; i < 15; i++) {
+                const piece = document.createElement('div');
+                piece.classList.add('piece');
+                piece.textContent = i + 1;
+                piece.dataset.index = i;
+                piece.addEventListener('click', () => movePiece(piece));
+                pieces.push(piece);
+                puzzleContainer.appendChild(piece);
+            }
+
+            emptyPiece = document.createElement('div');
+            emptyPiece.classList.add('piece', 'empty');
+            pieces.push(emptyPiece);
+            puzzleContainer.appendChild(emptyPiece);
+        }
+
+        function movePiece(piece) {
+            const currentIndex = parseInt(piece.dataset.index);
+            const emptyIndex = parseInt(emptyPiece.dataset.index);
+            const diff = Math.abs(currentIndex - emptyIndex);
+
+            if ((diff === 1 && Math.floor(currentIndex / 4) === Math.floor(emptyIndex / 4)) ||
+                (diff === 4 && currentIndex % 4 === emptyIndex % 4)) {
+                swapPieces(piece, emptyPiece);
+                checkSolved();
+            }
+        }
+
+        function swapPieces(piece1, piece2) {
+            const index1 = parseInt(piece1.dataset.index);
+            const index2 = parseInt(piece2.dataset.index);
+
+            const temp = pieces[index1];
+            pieces[index1] = pieces[index2];
+            pieces[index2] = temp;
+
+            piece1.dataset.index = index2;
+            piece2.dataset.index = index1;
+
+            puzzleContainer.insertBefore(piece1, piece2);
+        }
+
+        function checkSolved() {
+            let solved = true;
+            for (let i = 0; i < pieces.length - 1; i++) {
+                if (parseInt(pieces[i].textContent) !== i + 1) {
+                    solved = false;
+                    break;
+                }
+            }
+
+            if (solved) {
+                pieces[pieces.length - 1].classList.add('solved');
+                alert('Parabéns! Você resolveu o quebra-cabeça!');
+            }
+        }
+
+        function shuffle() {
+            for (let i = 0; i < 1000; i++) {
+                const randomIndex = Math.floor(Math.random() * 15);
+                movePiece(pieces[randomIndex]);
+            }
+        }
+
+        createPuzzle();
+    </script>
+</body>
+</html>

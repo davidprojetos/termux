@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Clique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Clique</h1>
+    <p>Clique nos quadrados coloridos para ganhar pontos antes do tempo acabar!</p>
+    <p id="score">Pontuação: <span id="scoreValue">0</span></p>
+    <div id="gameBoard">
+        <div class="square" style="background-color: red;"></div>
+        <div class="square" style="background-color: blue;"></div>
+        <div class="square" style="background-color: green;"></div>
+        <div class="square" style="background-color: yellow;"></div>
+    </div>
+
+    <script>
+        const squares = document.querySelectorAll('.square');
+        const scoreDisplay = document.getElementById('scoreValue');
+        let score = 0;
+
+        squares.forEach(square => {
+            square.addEventListener('click', () => {
+                score++;
+                scoreDisplay.textContent = score;
+            });
+        });
+
+        setTimeout(() => {
+            alert(`Tempo esgotado! Sua pontuação final é ${score}.`);
+            resetGame();
+        }, 30000); // 30 segundos
+
+        function resetGame() {
+            score = 0;
+            scoreDisplay.textContent = score;
+        }
+    </script>
+</body>
+</html>
