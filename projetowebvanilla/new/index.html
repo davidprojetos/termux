@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo de Plataforma</title>
+<style>
+  * { padding: 0; margin: 0; }
+  canvas { background: #eee; display: block; margin: 0 auto; }
+  #gameCanvas { width: 800px; height: 400px; border: 1px solid #000; }
+  .button { font-size: 18px; padding: 10px; margin: 5px; }
+</style>
+</head>
+<body>
+
+<canvas id="gameCanvas"></canvas>
+<br>
+<button class="button" onclick="moveLeft()">Esquerda</button>
+<button class="button" onclick="moveRight()">Direita</button>
+<button class="button" onclick="jump()">Pular</button>
+
+<script>
+  var canvas = document.getElementById('gameCanvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = 800;
+  canvas.height = 400;
+
+  var player = {
+    x: 100,
+    y: 100,
+    width: 50,
+    height: 50,
+    color: 'blue',
+    velocityX: 0,
+    velocityY: 0,
+    jumpPower: -10,
+    onGround: false,
+    speed: 5
+  };
+
+  var gravity = 0.5;
+  var friction = 0.9;
+
+  function moveLeft() { player.velocityX--; }
+  function moveRight() { player.velocityX++; }
+  function jump() {
+    if(player.onGround) {
+      player.velocityY += player.jumpPower;
+      player.onGround = false;
+    }
+  }
+
+  function update() {
+    // Aplicar gravidade
+    player.velocityY += gravity;
+    player.y += player.velocityY;
+    player.velocityX *= friction;
+    player.x += player.velocityX;
+
+    // Simular o chão
+    if(player.y > canvas.height - player.height) {
+      player.y = canvas.height - player.height;
+      player.velocityY = 0;
+      player.onGround = true;
+    }
+
+    // Impedir saída da tela
+    if(player.x < 0) player.x = 0;
+    if(player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function gameLoop() {
+    requestAnimationFrame(gameLoop);
+    update();
+    draw();
+  }
+
+  gameLoop();
+</script>
+
+</body>
+</html>
