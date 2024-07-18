@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:layout_margin="4dp"
+     android:id="@+id/cardView5">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:orientation="vertical">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="18sp"
+             android:id="@+id/textViewTitulo5"
+             android:text="Projeto 5 - CRUD SQLite"
+             android:textStyle="bold" />
+
+        <ListView
+             android:layout_height="130dp"
+             android:layout_width="match_parent"
+             android:divider="@null"
+             android:layout_marginTop="8dp"
+             android:id="@+id/listViewItemsSqlite"
+             android:dividerHeight="0dp">
+
+        </ListView>
+
+        <EditText
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:hint="ID"
+             android:textSize="14sp"
+             android:layout_marginTop="8dp"
+             android:maxLines="1"
+             android:inputType="text"
+             android:id="@+id/editTextIdSqlite" />
+
+        <EditText
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:hint="Nome do Item"
+             android:textSize="14sp"
+             android:layout_marginTop="8dp"
+             android:maxLines="1"
+             android:inputType="text"
+             android:id="@+id/editTextNomeSqlite" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="end"
+             android:orientation="horizontal"
+             android:layout_marginTop="8dp">
+
+            <Button
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_marginEnd="3dp"
+                 android:textSize="12sp"
+                 android:layout_weight="1"
+                 android:id="@+id/buttonAdicionarSqlite"
+                 android:text="+" />
+
+            <Button
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_marginEnd="3dp"
+                 android:textSize="12sp"
+                 android:layout_weight="1"
+                 android:id="@+id/buttonAtualizarSqlite"
+                 android:text="^" />
+
+            <Button
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="12sp"
+                 android:layout_weight="1"
+                 android:id="@+id/buttonDeletarSqlite"
+                 android:text="x" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
