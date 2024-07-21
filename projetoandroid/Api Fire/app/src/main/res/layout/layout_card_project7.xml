@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/textViewTituloN"
-            android:text="Projeto N - Descrição do Projeto"
+            android:text="Projeto 7 - X"
             android:textStyle="bold" />
 
         <!-- Adicionar outros elementos conforme necessário -->

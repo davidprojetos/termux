@@ -1,67 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="0dp"
-    android:layout_margin="4dp"
-    android:layout_weight="1"
-    android:id="@+id/cardView4">
+<androidx.cardview.widget.CardView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="0dp"
+     android:layout_margin="4dp"
+     android:layout_weight="1"
+     android:id="@+id/cardView4">
 
     <LinearLayout
-        android:layout_height="310dp"
-        android:layout_width="match_parent"
-        android:padding="16dp"
-        android:orientation="vertical">
+         android:layout_height="310dp"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:orientation="vertical">
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textSize="18sp"
-            android:id="@+id/textViewTitulo4"
-            android:text="Projeto 4 - Pomodoro"
-            android:textStyle="bold" />
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="18sp"
+             android:id="@+id/textViewTitulo4"
+             android:text="Projeto 4 - Pomodoro"
+             android:textStyle="bold" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textSize="48sp"
-            android:layout_marginTop="16dp"
-            android:id="@+id/textViewTimer"
-            android:text="10:00"
-            android:layout_gravity="center_horizontal" />
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="48sp"
+             android:layout_marginTop="16dp"
+             android:id="@+id/textViewTimer"
+             android:text="10:00"
+             android:layout_gravity="center_horizontal" />
 
         <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal">
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:orientation="horizontal"
+             android:layout_marginTop="16dp"
+             android:layout_gravity="center_horizontal">
 
             <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:orientation="vertical">
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:orientation="vertical">
 
                 <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:id="@+id/buttonPlay"
-                    android:text="Play" />
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginStart="0dp"
+                     android:id="@+id/buttonPlay"
+                     android:text="Play" />
 
                 <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:id="@+id/buttonStop"
-                    android:text="Stop" />
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginStart="0dp"
+                     android:id="@+id/buttonStop"
+                     android:text="Stop" />
 
                 <Button
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:id="@+id/buttonPause"
-                    android:text="Pause" />
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginStart="0dp"
+                     android:id="@+id/buttonPause"
+                     android:text="Pause" />
 
             </LinearLayout>
 

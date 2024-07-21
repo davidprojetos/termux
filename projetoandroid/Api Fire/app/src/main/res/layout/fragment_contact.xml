@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="8dp"
+     android:orientation="vertical">
 
-    <!-- Layout para o fragmento de Contato -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact Fragment"
-        android:textSize="18sp" />
-   
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textSize="18sp"
+         android:text="Formulario para Contato" />
 
-</RelativeLayout>
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:hint="Destinatário"
+         android:inputType="textEmailAddress"
+         android:id="@+id/editTextRecipient" />
+
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:hint="Seu Nome"
+         android:inputType="textPersonName"
+         android:id="@+id/editTextName" />
+
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:hint="Assunto"
+         android:inputType="text"
+         android:id="@+id/editTextSubject" />
+
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:hint="Mensagem"
+         android:minLines="3"
+         android:inputType="textMultiLine"
+         android:id="@+id/editTextMessage" />
+
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:id="@+id/buttonSend"
+         android:text="Enviar" />
+
+</LinearLayout>

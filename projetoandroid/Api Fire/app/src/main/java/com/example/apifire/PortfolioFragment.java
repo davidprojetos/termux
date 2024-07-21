@@ -40,14 +40,16 @@ public class PortfolioFragment extends Fragment {
     private ArrayAdapter<String> listAdapterSqlite;
     private ArrayList<String> itemsListSqlite;
     private SQLiteHelper sqliteHelper;
-
+    
+    /*
     private EditText editTextInterval;
     private Button buttonStartNotifications, buttonStopNotifications;
     private BibleNotificationManager bibleNotificationManager;
     private Handler handler = new Handler();
     private Runnable notificationRunnable;
     private long intervalMillis;
-
+    */
+    
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -90,14 +92,15 @@ public class PortfolioFragment extends Fragment {
         buttonAdicionarSqlite.setOnClickListener(v -> addItemSqlite());
         buttonAtualizarSqlite.setOnClickListener(v -> updateItemSqlite());
         buttonDeletarSqlite.setOnClickListener(v -> deleteItemSqlite());
-
+        
+        /*
         editTextInterval = rootView.findViewById(R.id.editTextInterval);
         buttonStartNotifications = rootView.findViewById(R.id.buttonStartNotifications);
         buttonStopNotifications = rootView.findViewById(R.id.buttonStopNotifications);
 
         buttonStartNotifications.setOnClickListener(v -> startBibleNotifications());
         buttonStopNotifications.setOnClickListener(v -> stopBibleNotifications());
-
+        */
         loadItemsSqlite();
 
         return rootView;
@@ -169,7 +172,7 @@ public class PortfolioFragment extends Fragment {
         cursor.close();
         listAdapterSqlite.notifyDataSetChanged();
     }
-
+    /*
     private void startBibleNotifications() {
         intervalMillis = Long.parseLong(editTextInterval.getText().toString()) * 1000;
 
@@ -192,5 +195,5 @@ public class PortfolioFragment extends Fragment {
     private void sendBibleNotification() {
         bibleNotificationManager = new BibleNotificationManager();
         bibleNotificationManager.showNotification(getContext(), "Your message");
-    }
+    }*/
 }
