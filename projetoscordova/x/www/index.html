@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD LocalStorage & IndexedDB</title>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <h1>CRUD com LocalStorage & IndexedDB</h1>
+
+    <h2>Adicionar Item</h2>
+    <form id="addForm">
+        <label for="data">Data:</label>
+        <input type="text" id="data" required>
+        <label for="data_num">Data Num:</label>
+        <input type="number" id="data_num" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Itens</h2>
+    <ul id="itemList"></ul>
+
+    <h2>Atualizar Item</h2>
+    <form id="updateForm">
+        <label for="update_id">ID:</label>
+        <input type="number" id="update_id" required>
+        <label for="update_data">Data:</label>
+        <input type="text" id="update_data" required>
+        <label for="update_data_num">Data Num:</label>
+        <input type="number" id="update_data_num" required>
+        <button type="submit">Atualizar</button>
+    </form>
+
+    <h2>Excluir Item</h2>
+    <form id="deleteForm">
+        <label for="delete_id">ID:</label>
+        <input type="number" id="delete_id" required>
+        <button type="submit">Excluir</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa o CRUD
+            initCrud();
+        });
+    </script>
+</body>
+</html>
