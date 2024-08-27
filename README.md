@@ -27,3 +27,17 @@
   git add . && git commit -m "add " && git push
 ```
 
+### Configuração do .bashrc termux
+```sh
+export ANDROID_HOME="$PREFIX/opt/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+export JAVA_HOME=/data/data/com.termux/files/usr/lib/jvm/java-17-openjdk
+export "PATH=$PATH:$PREFIX/opt/gradle/bin"
+```
+
+
+### Adicionar ao aqrquivo gradle.properties no projeto cordova /plataforms/android
+
+```sh
+android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.0/aapt2
+```
