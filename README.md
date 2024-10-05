@@ -35,9 +35,27 @@ export JAVA_HOME=/data/data/com.termux/files/usr/lib/jvm/java-17-openjdk
 export "PATH=$PATH:$PREFIX/opt/gradle/bin"
 ```
 
+```sh
+  source ~/.bashrc
+```
 
 ### Adicionar ao aqrquivo gradle.properties no projeto cordova /plataforms/android
 
 ```sh
+  cordova create xxx xxx.xxx.xxx "XXX Aaa"
+```
+
+```sh
+  cordova platform add android
+  cordova platform ls
+```
+
+```sh
 android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.0/aapt2
+```
+
+```sh
+  cordova build android
+  cp /data/data/com.termux/files/home/termux/projetoscordova/xxx/platforms/android/app/build/outputs/apk/debug/app-debug.apk ~/storage/downloads
+
 ```
