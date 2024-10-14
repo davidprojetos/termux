@@ -3,13 +3,13 @@ from email.message import EmailMessage
 
 # Configurações do e-mail
 email_de = "davidk1k3kk@gmail.com"
-email_para = "davidk1k3k@gmail.com"
-senha = "hmpsxqjasdvsxtqu"
+email_para = input("Digite o endereço de email de destino: ")
+senha = "pfqlcemdaotxppiw"  # **Nota:** Evite hardcodar senhas no código.
 
 # Criação do objeto EmailMessage
 msg = EmailMessage()
-msg.set_content("Este é o conteúdo do e-mail.")
-msg['Subject'] = 'Assunto do e-mail'
+msg.set_content(input("Digite o conteúdo: "))
+msg['Subject'] = input("Digite o assunto: ")
 msg['From'] = email_de
 msg['To'] = email_para
 

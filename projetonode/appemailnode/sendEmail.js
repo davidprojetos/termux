@@ -14,11 +14,11 @@ let transporter = nodemailer.createTransport({
 
 // Configurações do e-mail
 let mailOptions = {
-    from: '"Seu Nome" <' + process.env.EMAIL_USER + '>', // Remetente
-    to: 'davidk1k3k@gmail.com',                         // Destinatário
-    subject: 'Assunto do E-mail',                         // Assunto
-    text: 'Este é o conteúdo do e-mail.',                 // Corpo do e-mail em texto
-    html: '<b>Este é o conteúdo do e-mail em HTML.</b>'  // Corpo do e-mail em HTML
+    from: '"Nome" <' + process.env.EMAIL_USER + '>', // Remetente
+    to: 'davidk1k3k@gmail.com', // Destinatário
+    subject: 'x', // Assunto
+    text: 'x', // Corpo do e-mail em texto
+    html: '<b>HTML</b>'  // Corpo do e-mail em HTML
 };
 
 // Envio do e-mail

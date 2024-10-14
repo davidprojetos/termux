@@ -16,7 +16,7 @@ try {
     $mail->Username   = 'davidk1k3kk@gmail.com';                  // Usuário SMTP
     $mail->Password   = 'hmpsxqjasdvsxtqu';                            // Senha SMTP
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Ativar criptografia TLS
-    $mail->Port       = 587;                                    // Porta TCP para se conectar
+    $mail->Port       = 465;                                    // Porta TCP para se conectar
 
     // Destinatários
     $mail->setFrom('davidk1k3kk@gmail.com', 'Seu Nome');
