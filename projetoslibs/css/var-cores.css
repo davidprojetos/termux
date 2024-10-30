@@ -1,0 +1,386 @@
+:root {
+  /* Cores Neutras */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Tons de Azul */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+
+  /* Tons de Vermelho */
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+
+  /* Tons de Verde */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+
+  /* Tons de Amarelo */
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+
+  /* Tons de Roxo */
+  --color-purple-50: #f5f3ff;
+  --color-purple-100: #ede9fe;
+  --color-purple-200: #ddd6fe;
+  --color-purple-300: #c4b5fd;
+  --color-purple-400: #a78bfa;
+  --color-purple-500: #8b5cf6;
+  --color-purple-600: #7c3aed;
+  --color-purple-700: #6d28d9;
+  --color-purple-800: #5b21b6;
+  --color-purple-900: #4c1d95;
+
+  /* Tons de Laranja */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+
+  /* Tons de Rosa */
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
+
+  /* Tons de Ciano */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
+
+  /* Tons de Marrom */
+  --color-brown-50: #f3f2ef;
+  --color-brown-100: #e4e1da;
+  --color-brown-200: #cac2b8;
+  --color-brown-300: #a89892;
+  --color-brown-400: #7f6e63;
+  --color-brown-500: #66544a;
+  --color-brown-600: #4d4137;
+  --color-brown-700: #3a312b;
+  --color-brown-800: #2c2520;
+  --color-brown-900: #211b17;
+  
+  /* Cores Metálicas */
+  --color-gold: #ffd700;
+  --color-silver: #c0c0c0;
+  --color-bronze: #cd7f32;
+  --color-platinum: #e5e4e2;
+  --color-copper: #b87333;
+
+  /* Tons Pastel */
+  --color-pastel-pink: #ffd1dc;
+  --color-pastel-blue: #aec6cf;
+  --color-pastel-green: #77dd77;
+  --color-pastel-yellow: #fdfd96;
+  --color-pastel-purple: #cbaacb;
+  --color-pastel-orange: #ffb347;
+
+  /* Tons Neon */
+  --color-neon-pink: #ff6ec7;
+  --color-neon-green: #39ff14;
+  --color-neon-blue: #0ff0fc;
+  --color-neon-orange: #ff5733;
+  --color-neon-yellow: #fdfd96;
+
+  /* Cores Adicionais */
+  --color-teal-50: #e6fffa;
+  --color-teal-100: #b2f5ea;
+  --color-teal-200: #81e6d9;
+  --color-teal-300: #4fd1c5;
+  --color-teal-400: #38b2ac;
+  --color-teal-500: #319795;
+  --color-teal-600: #2c7a7b;
+  --color-teal-700: #285e61;
+  --color-teal-800: #234e52;
+  --color-teal-900: #1d4044;
+
+  --color-lime-50: #f7fee7;
+  --color-lime-100: #ecfccb;
+  --color-lime-200: #d9f99d;
+  --color-lime-300: #bef264;
+  --color-lime-400: #a3e635;
+  --color-lime-500: #84cc16;
+  --color-lime-600: #65a30d;
+  --color-lime-700: #4d7c0f;
+  --color-lime-800: #3f6212;
+  --color-lime-900: #365314;
+
+  /* Tons Profundos */
+  --color-deep-blue: #1e3a5f;
+  --color-deep-green: #2e7d32;
+  --color-deep-red: #8b0000;
+  --color-deep-purple: #4b0082;
+  --color-deep-teal: #014d4e;
+  --color-deep-orange: #ff4500;
+
+  /* Tons Escuros */
+  --color-dark-navy: #02075d;
+  --color-dark-olive: #556b2f;
+  --color-dark-maroon: #800000;
+  --color-dark-forest: #013220;
+  --color-dark-slate: #2f4f4f;
+
+  /* Cores Vibrantes */
+  --color-vibrant-pink: #ff007f;
+  --color-vibrant-green: #00ff00;
+  --color-vibrant-orange: #ff4500;
+  --color-vibrant-purple: #8a2be2;
+  --color-vibrant-yellow: #ffd300;
+
+  /* Tons de Terra */
+  --color-earthy-beige: #f5f5dc;
+  --color-earthy-sand: #c2b280;
+  --color-earthy-clay: #b66a50;
+  --color-earthy-forest: #228b22;
+  --color-earthy-stone: #a9a9a9;
+
+  /* Tons Frios */
+  --color-cool-mint: #98ff98;
+  --color-cool-aqua: #00ffff;
+  --color-cool-ice: #d0f0fd;
+  --color-cool-sky: #87ceeb;
+  --color-cool-seafoam: #2e8b57;
+
+  /* Tons Quentes */
+  --color-warm-blush: #f5a9b8;
+  --color-warm-apricot: #ffb347;
+  --color-warm-salmon: #ff9999;
+  --color-warm-sunshine: #ffdd00;
+  --color-warm-peach: #ffe5b4;
+
+  /* Tons Monocromáticos */
+  --color-lightest-gray: #f7f7f7;
+  --color-lighter-gray: #e1e1e1;
+  --color-light-gray: #cfcfcf;
+  --color-medium-gray: #b1b1b1;
+  --color-dark-gray: #757575;
+  --color-darker-gray: #4a4a4a;
+  --color-darkest-gray: #2a2a2a;
+
+  /* Tons Inspirados em Pedras Preciosas */
+  --color-ruby: #e0115f;
+  --color-emerald: #50c878;
+  --color-sapphire: #0f52ba;
+  --color-amethyst: #9966cc;
+  --color-topaz: #ffc87c;
+  --color-onyx: #353839;
+  --color-jade: #00a86b;
+
+  /* Tons Outonais */
+  --color-autumn-red: #d2691e;
+  --color-autumn-orange: #ff8c00;
+  --color-autumn-yellow: #ffd700;
+  --color-autumn-brown: #8b4513;
+  --color-autumn-green: #556b2f;
+  --color-autumn-purple: #6a5acd;
+
+  /* Tons Suaves */
+  --color-soft-pink: #f4cccc;
+  --color-soft-lavender: #d5a6bd;
+  --color-soft-mint: #d9ead3;
+  --color-soft-cream: #fff2cc;
+  --color-soft-sky: #cfe2f3;
+  --color-soft-gray: #d9d2e9;
+
+  /* Tons Pastéis Extras */
+  --color-pastel-lavender: #dcb4d8;
+  --color-pastel-lilac: #b19cd9;
+  --color-pastel-mint-green: #98ff98;
+  --color-pastel-coral: #ffb3a7;
+  --color-pastel-sunshine: #fff4a3;
+
+  /* Tons Terrosos */
+  --color-earthy-tan: #d2b48c;
+  --color-earthy-mud: #70543e;
+  --color-earthy-bark: #5d3a1a;
+  --color-earthy-spruce: #274e13;
+  --color-earthy-ochre: #cc7722;
+
+  /* Tons Marinhos */
+  --color-seaweed: #354f52;
+  --color-seafoam: #7fc8a9;
+  --color-ocean: #005377;
+  --color-deep-sea: #123456;
+  --color-sand: #f4a460;
+
+  /* Tons do Amanhecer */
+  --color-dawn-blue: #5d9ca6;
+  --color-dawn-purple: #a5b8d8;
+  --color-dawn-pink: #fac8d6;
+  --color-dawn-gold: #ffd966;
+  --color-dawn-orange: #ffab73;
+
+  /* Tons Noturnos */
+  --color-midnight: #191970;
+  --color-starry-blue: #4a5a91;
+  --color-starlight: #e6e6fa;
+  --color-moon-glow: #f2f4f8;
+  --color-twilight: #2c2f54;
+
+  /* Tons Tropicais */
+  --color-tropical-blue: #00bfa5;
+  --color-tropical-green: #00ffb0;
+  --color-tropical-pink: #ff6f91;
+  --color-tropical-yellow: #ffd31d;
+  --color-tropical-orange: #ff8c42;
+
+  /* Tons Escuros Adicionais */
+  --color-dark-burgundy: #800020;
+  --color-dark-navy-blue: #000080;
+  --color-dark-forest-green: #014421;
+  --color-dark-chocolate: #3d1e00;
+  --color-dark-charcoal: #36454f;
+
+  /* Tons Pastéis Adicionais */
+  --color-pastel-rose: #ffc5cb;
+  --color-pastel-teal: #99f3bd;
+  --color-pastel-mauve: #efbbcc;
+  --color-pastel-periwinkle: #c3cde6;
+  --color-pastel-sage: #b2bba1;
+  
+  /* Cores Metálicas Adicionais */
+  --color-metallic-rose-gold: #b76e79;
+  --color-metallic-chrome: #d4d4d4;
+  --color-metallic-steel-blue: #4682b4;
+  --color-metallic-gunmetal: #2a3439;
+  --color-metallic-iron: #4c4c4c;
+
+  /* Tons Futuristas */
+  --color-futuristic-blue: #0ff0fc;
+  --color-futuristic-green: #19f9d8;
+  --color-futuristic-purple: #9a00e6;
+  --color-futuristic-silver: #c1c8e4;
+  --color-futuristic-pink: #ff2079;
+
+  /* Tons de Natureza */
+  --color-forest-green: #228b22;
+  --color-moss-green: #8a9a5b;
+  --color-earth-brown: #a0522d;
+  --color-sky-blue: #87ceeb;
+  --color-flower-petal: #ffb6c1;
+  --color-mountain-gray: #778899;
+
+  /* Tons Urbanos */
+  --color-urban-concrete: #7d7f80;
+  --color-urban-brick: #b22222;
+  --color-urban-steel: #4a6f7a;
+  --color-urban-smoke: #a9a9a9;
+  --color-urban-sunset: #ff4500;
+
+  /* Tons Vintage */
+  --color-vintage-blue: #7285a5;
+  --color-vintage-rose: #b66a7a;
+  --color-vintage-beige: #d8c3a5;
+  --color-vintage-burgundy: #8b3a3a;
+  --color-vintage-olive: #556b2f;
+
+  /* Tons de Praia */
+  --color-sand-yellow: #f5deb3;
+  --color-ocean-blue: #00ced1;
+  --color-coral-pink: #ff7f50;
+  --color-sunshine-yellow: #ffd700;
+  --color-palm-green: #228b22;
+
+  /* Tons do Inverno */
+  --color-winter-snow: #f8f9fa;
+  --color-winter-ice-blue: #d0e7f9;
+  --color-winter-gray: #a9a9a9;
+  --color-winter-midnight: #1c1c2a;
+  --color-winter-frost: #bcd4e6;
+
+  /* Tons Neon Adicionais */
+  --color-neon-purple: #a020f0;
+  --color-neon-cyan: #00ffff;
+  --color-neon-lime: #aaff00;
+  --color-neon-turquoise: #30d5c8;
+  --color-neon-salmon: #ff8c69;
+
+  /* Tons de Café */
+  --color-espresso: #4b3832;
+  --color-latte: #d7ccc8;
+  --color-cappuccino: #a1887f;
+  --color-mocha: #4e342e;
+  --color-caramel: #d2b48c;
+
+  /* Tons de Alimentos */
+  --color-tomato-red: #ff6347;
+  --color-avocado-green: #568203;
+  --color-carrot-orange: #ed9121;
+  --color-blueberry: #4f86f7;
+  --color-grape: #6f2da8;
+
+  /* Tons Profundos e Escuros */
+  --color-deep-plum: #450920;
+  --color-deep-indigo: #3a2f4a;
+  --color-deep-aubergine: #4e3b4c;
+  --color-deep-navy: #001f3f;
+  --color-deep-emerald: #046307;
+
+  /* Tons Claros e Aconchegantes */
+  --color-cozy-cream: #fff5e1;
+  --color-cozy-blush: #f1c2c9;
+  --color-cozy-sage: #b7c3a4;
+  --color-cozy-honey: #f9d976;
+  --color-cozy-peach: #ffe5b4;
+}

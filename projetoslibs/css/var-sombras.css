@@ -1,0 +1,94 @@
+:root {
+  /* Sombras leves */
+  --shadow-light-1: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-light-2: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-light-3: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-light-4: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  
+  /* Sombras médias */
+  --shadow-medium-1: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-medium-2: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  --shadow-medium-3: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-medium-4: 0px 10px 20px rgba(0, 0, 0, 0.35);
+
+  /* Sombras densas */
+  --shadow-deep-1: 0px 12px 24px rgba(0, 0, 0, 0.4);
+  --shadow-deep-2: 0px 16px 32px rgba(0, 0, 0, 0.45);
+  --shadow-deep-3: 0px 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-deep-4: 0px 24px 48px rgba(0, 0, 0, 0.55);
+
+  /* Sombras suaves e difusas */
+  --shadow-soft-1: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-soft-2: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-soft-3: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  --shadow-soft-4: 0px 20px 40px rgba(0, 0, 0, 0.25);
+
+  /* Sombras internas */
+  --shadow-inset-light: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-inset-medium: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-inset-deep: inset 0px 6px 12px rgba(0, 0, 0, 0.3);
+  --shadow-inset-soft: inset 0px 8px 16px rgba(0, 0, 0, 0.25);
+
+  /* Sombras coloridas */
+  --shadow-blue: 0px 4px 8px rgba(0, 122, 255, 0.3);
+  --shadow-green: 0px 4px 8px rgba(76, 175, 80, 0.3);
+  --shadow-purple: 0px 4px 8px rgba(156, 39, 176, 0.3);
+  --shadow-red: 0px 4px 8px rgba(244, 67, 54, 0.3);
+  --shadow-yellow: 0px 4px 8px rgba(255, 235, 59, 0.3);
+
+  /* Sombras com múltiplas camadas */
+  --shadow-layered-1: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-layered-2: 0px 3px 6px rgba(0, 0, 0, 0.2), 0px 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow-layered-3: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.35);
+
+  /* Sombras de elevação */
+  --shadow-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-elevation-2: 0px 2px 5px rgba(0, 0, 0, 0.2), 0px 3px 7px rgba(0, 0, 0, 0.15);
+  --shadow-elevation-3: 0px 3px 8px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* Sombras em ângulos específicos */
+  --shadow-angle-45: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-angle-90: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  --shadow-angle-135: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-angle-180: 0px -10px 20px rgba(0, 0, 0, 0.3);
+  --shadow-angle-225: -5px -5px 15px rgba(0, 0, 0, 0.2);
+
+  /* Sombras suaves coloridas */
+  --shadow-soft-blue: 0px 5px 15px rgba(0, 150, 255, 0.1);
+  --shadow-soft-pink: 0px 5px 15px rgba(255, 105, 180, 0.1);
+  --shadow-soft-green: 0px 5px 15px rgba(0, 255, 150, 0.1);
+  --shadow-soft-orange: 0px 5px 15px rgba(255, 140, 0, 0.1);
+  --shadow-soft-purple: 0px 5px 15px rgba(150, 0, 255, 0.1);
+
+  /* Sombras suaves adicionais */
+  --shadow-floating-1: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-floating-2: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  --shadow-floating-3: 0px 20px 50px rgba(0, 0, 0, 0.2);
+
+  /* Sombras de efeito de luz */
+  --shadow-glow-blue: 0px 0px 10px rgba(0, 150, 255, 0.5);
+  --shadow-glow-green: 0px 0px 10px rgba(0, 255, 150, 0.5);
+  --shadow-glow-pink: 0px 0px 10px rgba(255, 105, 180, 0.5);
+  --shadow-glow-yellow: 0px 0px 10px rgba(255, 235, 59, 0.5);
+
+  /* Sombras intensas para foco */
+  --shadow-focus-blue: 0px 0px 8px rgba(0, 122, 255, 0.6), 0px 0px 20px rgba(0, 122, 255, 0.3);
+  --shadow-focus-green: 0px 0px 8px rgba(76, 175, 80, 0.6), 0px 0px 20px rgba(76, 175, 80, 0.3);
+  --shadow-focus-red: 0px 0px 8px rgba(244, 67, 54, 0.6), 0px 0px 20px rgba(244, 67, 54, 0.3);
+  --shadow-focus-purple: 0px 0px 8px rgba(156, 39, 176, 0.6), 0px 0px 20px rgba(156, 39, 176, 0.3);
+
+  /* Sombras em camadas para profundidade extra */
+  --shadow-layered-deep-1: 0px 5px 10px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.15), 0px 15px 25px rgba(0, 0, 0, 0.2);
+  --shadow-layered-deep-2: 0px 6px 12px rgba(0, 0, 0, 0.1), 0px 12px 24px rgba(0, 0, 0, 0.15), 0px 18px 36px rgba(0, 0, 0, 0.2);
+  --shadow-layered-deep-3: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 16px 32px rgba(0, 0, 0, 0.2), 0px 24px 48px rgba(0, 0, 0, 0.3);
+
+  /* Sombras de sobreposição para destaque */
+  --shadow-overlay-light: 0px 0px 15px rgba(0, 0, 0, 0.1), 0px 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-overlay-medium: 0px 0px 20px rgba(0, 0, 0, 0.15), 0px 15px 35px rgba(0, 0, 0, 0.25);
+  --shadow-overlay-deep: 0px 0px 30px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.3);
+
+  /* Sombras de botão */
+  --shadow-button-light: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  --shadow-button-medium: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-button-deep: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}

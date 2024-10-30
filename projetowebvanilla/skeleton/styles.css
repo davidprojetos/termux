@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton-item {
+    background-color: #e0e0e0; /* Cor do skeleton */
+    height: 20px; /* Altura do skeleton */
+    border-radius: 4px; /* Bordas arredondadas */
+    animation: pulse 1.5s infinite; /* Animação de pulso */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.data-container {
+    margin-top: 20px;
+}
