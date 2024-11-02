@@ -11,7 +11,7 @@
 
 ## Criar projeto
 ```sh
-
+  cordova create nome-do-app br.com.app "Nome do app"
 ```
 
 ## Adicionar android
