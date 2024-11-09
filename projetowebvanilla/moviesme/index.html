@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos TMDb</title>
+</head>
+<body onload="busca()">
+    <p id="conteudo">Carregando...</p>
+</body>
+<script defer>
+    async function busca() {
+        const url = 'https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&region=BR';
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYWZjNTRmZjdjZTM3YzA3ODg0M2ExZDE1YTBlOGFkOCIsIm5iZiI6MTczMDYwMTE4My43NzM4MTEsInN1YiI6IjY3MjZkZWNlMTdkNzgyMjFlZGQ4OTU3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zcg18ZPiBrsry3JPS7VmuFRVpduMr2d_cvcahyGMD8I'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) throw new Error(`Erro: ${response.statusText}`);
+
+            const data = await response.json();
+            const conteudo = document.getElementById("conteudo");
+          console.log(data)
+            // Acumula todos os gêneros em uma string
+            let now_playing = "";
+            let photos = [];
+            for (let i = 0; i < 20 && i < data.results.length; i++) {
+                now_playing += `Titulo: ${data.results[i].title}<br>
+                
+                <img src="https://image.tmdb.org/t/p/w92/${data.results[i].poster_path}"><br>
+                <p>
+               <details>
+  <summary>Snopse</summary>
+  ${data.results[i].overview}
+</details> </p>
+                `;
+                
+            }
+
+            conteudo.innerHTML = now_playing || "Nenhum gênero encontrado.";
+        } catch (error) {
+            console.error(error);
+            document.getElementById("conteudo").innerText = "Erro ao carregar dados.";
+        }
+    }
+</script>
+</html>

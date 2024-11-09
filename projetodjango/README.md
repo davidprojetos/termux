@@ -1,3 +1,8 @@
+### Install 
+```sh
+	pip install django
+```
+
 ### New project
 
 ```sh
