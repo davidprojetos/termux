@@ -37,7 +37,7 @@ android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/b
 ```sh
   cordova build android
 ```
-# Mwnagem de saida esperada
+# Mensagem de saida esperada
 
 Checking Java JDK and Android SDK versions
 ANDROID_HOME=/data/data/com.termux/files/usr/opt/Android/sdk (recommended setting)                                    ANDROID_SDK_ROOT=undefined (DEPRECATED)
