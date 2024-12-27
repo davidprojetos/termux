@@ -31,7 +31,13 @@ android.enableJetifier=true
 android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.0/aapt2
 ```
 
+# Criar o local.properties
 
+```sh
+
+echo "sdk.dir=/data/data/com.termux/files/usr/opt/Android/sdk" > local.properties
+
+```
 
 # Build
 ```sh
