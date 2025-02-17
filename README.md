@@ -59,3 +59,4 @@ android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/b
   cp /data/data/com.termux/files/home/termux/projetoscordova/xxx/platforms/android/app/build/outputs/apk/debug/app-debug.apk ~/storage/downloads
 
 ```
+
