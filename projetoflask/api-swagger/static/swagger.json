@@ -1,0 +1,110 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Flask API",
+    "description": "API RESTful simples com Flask",
+    "version": "1.0"
+  },
+  "paths": {
+    "/item": {
+      "post": {
+        "summary": "Criar um novo item",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Informações do novo item",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Item criado com sucesso"
+          }
+        }
+      }
+    },
+    "/item/{item_id}": {
+      "get": {
+        "summary": "Obter um item pelo ID",
+        "parameters": [
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "ID do item",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item encontrado"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar um item",
+        "parameters": [
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "ID do item",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Dados do item a ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item atualizado com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir um item",
+        "parameters": [
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "ID do item",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item deletado com sucesso"
+          }
+        }
+      }
+    }
+  }
+}
+

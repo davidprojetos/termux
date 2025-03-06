@@ -15,7 +15,7 @@
   "devDependencies": {
     "cordova-android": "^13.0.0",
     "cordova-browser": "^7.0.0",
-    "cordova-sqlite-storage": "^6.1.0"
+    "cordova-sqlite-storage": "^7.0.0"
   },
   "cordova": {
     "platforms": [

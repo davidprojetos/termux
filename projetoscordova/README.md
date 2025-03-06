@@ -145,3 +145,17 @@ Built the following apk(s):
 cp platforms/android/app/build/outputs/apk/debug/app-debug.apk ~/storage/downloads
 
 ```
+
+# Atualizar os pacotes
+
+```sh
+npm update
+npm install -g npm-check-updates
+npx npm-check-updates
+npx npm-check-updates -u
+npm install
+npm list --depth=0
+npm cache verify
+npm cache clean --force
+npm cache verify
+```
