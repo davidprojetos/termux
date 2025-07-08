@@ -46,7 +46,7 @@ export "PATH=$PATH:$PREFIX/opt/gradle/bin"
 ```
 
 ```sh
-  cordova platform add android
+  cordova platform add android@13.0.0 # Com suporte a aarch64 
   cordova platform ls
 ```
 

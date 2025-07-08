@@ -17,7 +17,7 @@
 ## Adicionar android
 ```sh
 cd nome-do-app
-cordova platform add android
+cordova platform add android@13.0.0 # Com suporte a aarch64 
 cordova platform add browser
 ```
 
@@ -28,14 +28,14 @@ org.gradle.jvmargs=-Xmx2048m
 android.useAndroidX=true
 android.enableJetifier=true
 
-android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.0/aapt2
+android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.4/aapt2
 ```
 
 # Criar o local.properties
 
 ```sh
 
-echo "sdk.dir=/data/data/com.termux/files/usr/opt/Android/sdk" > local.properties
+echo "sdk.dir=/data/data/com.termux/files/usr/opt/Android/sdk" > platforms/android/local.properties
 
 ```
 
