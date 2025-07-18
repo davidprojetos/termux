@@ -9,62 +9,7 @@ from calendar import month_name
 
 DB_FILE = 'fiis.db'
 
-def connect():
-    conn = sqlite3.connect(DB_FILE)
-    conn.row_factory = sqlite3.Row
-    return conn
 
-def init_db(conn):
-    c = conn.cursor()
-
-    # Tabela de fundos
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS fundos (
-            ticker TEXT PRIMARY KEY,
-            qty REAL NOT NULL,
-            total_investido REAL NOT NULL
-        )
-    ''')
-
-    # Tabela de proventos
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS proventos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ticker TEXT NOT NULL,
-            ano INTEGER NOT NULL,
-            mes  INTEGER NOT NULL,
-            valor_cota REAL NOT NULL,
-            UNIQUE(ticker, ano, mes),
-            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
-        )
-    ''')
-
-    # Tabela de compras (agora com qtd_disponivel)
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS compras (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ticker TEXT NOT NULL,
-            data DATE NOT NULL,
-            quantidade REAL NOT NULL,
-            qtd_disponivel REAL NOT NULL,
-            valor REAL NOT NULL,
-            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
-        )
-    ''')
-
-    # Tabela de vendas
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS vendas (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ticker TEXT NOT NULL,
-            data DATE NOT NULL,
-            quantidade REAL NOT NULL,
-            valor REAL NOT NULL,  -- valor total da venda, não por cota
-            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
-        )
-    ''')
-
-    conn.commit()
 
 def import_proventos_two_months_ago(conn):
     """
@@ -274,7 +219,7 @@ def report_all(conn):
             f"{qty_ate:.1f}",
             f"R$ {valor_cota:.4f}",
             f"R$ {recebido:.2f}",
-            f"{pct:.2f}%"
+            f"{pct:.2f}% - {(pct*12):.2f}%/12"
         ])
         tot_inv += total
         tot_recv += recebido
@@ -1045,6 +990,112 @@ def report_historico_movimentacoes(conn, ticker=None):
     print("📜 Histórico de Compras e Vendas:")
     print(tabulate(tabela, headers=headers, tablefmt="grid"))
 
+def calcular_reducao_preco_medio_para_ultimo_preco(conn):
+    c = conn.cursor()
+
+    # Obtém todos os fundos registrados
+    c.execute("SELECT ticker, qty, total_investido FROM fundos")
+    fundos = c.fetchall()
+
+    if not fundos:
+        print("Nenhum fundo encontrado na base de dados.")
+        return
+
+    print("\n=== Análise de Redução de Preço Médio ===")
+
+    for fundo in fundos:
+        ticker = fundo["ticker"]
+        qtd_atual = fundo["qty"]
+        total_investido = fundo["total_investido"]
+        preco_medio = total_investido / qtd_atual
+
+        # Pega o preço da última compra (mais recente) do fundo
+        c.execute("""
+            SELECT valor, quantidade FROM compras 
+            WHERE ticker = ? 
+            ORDER BY data DESC, id DESC LIMIT 1
+        """, (ticker,))
+        ultima_compra = c.fetchone()
+
+        if not ultima_compra:
+            print(f"{ticker}: Sem histórico de compras.")
+            continue
+
+        preco_ultima_compra = ultima_compra["valor"] / ultima_compra["quantidade"]
+
+        if preco_ultima_compra >= preco_medio:
+            print(f"{ticker}: Preço atual R$ {preco_ultima_compra:.2f} >= preço médio R$ {preco_medio:.2f}. Nenhuma ação necessária.")
+            continue
+
+        # Calcula quantas cotas precisam ser compradas ao preço da última compra
+        qtd_necessaria = (qtd_atual * (preco_medio - preco_ultima_compra)) / preco_ultima_compra
+        novo_total_investido = total_investido + (qtd_necessaria * preco_ultima_compra)
+        nova_qtd = qtd_atual + qtd_necessaria
+        novo_preco_medio = novo_total_investido / nova_qtd
+
+        print(f"\n{ticker}:")
+        print(f"- Preço médio atual: R$ {preco_medio:.2f}")
+        print(f"- Preço da última compra: R$ {preco_ultima_compra:.2f}")
+        print(f"- Para ajustar o preço médio para R$ {preco_ultima_compra:.2f}, você precisa comprar ~{qtd_necessaria:.2f} cotas")
+        print(f"- Novo preço médio após compra: R$ {novo_preco_medio:.2f}")
+
+def connect():
+    conn = sqlite3.connect(DB_FILE)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def init_db(conn):
+    c = conn.cursor()
+
+    # Tabela de fundos
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS fundos (
+            ticker TEXT PRIMARY KEY,
+            qty REAL NOT NULL,
+            total_investido REAL NOT NULL
+        )
+    ''')
+
+    # Tabela de proventos
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS proventos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ticker TEXT NOT NULL,
+            ano INTEGER NOT NULL,
+            mes  INTEGER NOT NULL,
+            valor_cota REAL NOT NULL,
+            UNIQUE(ticker, ano, mes),
+            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
+        )
+    ''')
+
+    # Tabela de compras (agora com qtd_disponivel)
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS compras (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ticker TEXT NOT NULL,
+            data DATE NOT NULL,
+            quantidade REAL NOT NULL,
+            qtd_disponivel REAL NOT NULL,
+            valor REAL NOT NULL,
+            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
+        )
+    ''')
+
+    # Tabela de vendas
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS vendas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ticker TEXT NOT NULL,
+            data DATE NOT NULL,
+            quantidade REAL NOT NULL,
+            valor REAL NOT NULL,  -- valor total da venda, não por cota
+            FOREIGN KEY(ticker) REFERENCES fundos(ticker)
+        )
+    ''')
+
+    conn.commit()
+
 def menu_interativo(conn):
     while True:
         print("\n=== MENU FIIs ===")
@@ -1066,6 +1117,7 @@ def menu_interativo(conn):
         print("16. Verificar pendências de proventos")
         print("17. Histórico de movimentações")
         print("18. Atualizar movimentação (provento, compra ou venda)")
+        print("19. Calcular cotas para reduzir preço médio")
         print("0. Sair")
 
         opcao = input("Escolha uma opção: ")
@@ -1153,6 +1205,11 @@ def menu_interativo(conn):
                 atualizar_venda(conn, id_mov, nova_data, nova_qtd, novo_valor)
             else:
                 print("Tipo inválido.")
+        
+        elif opcao == "19":
+          calcular_reducao_preco_medio_para_ultimo_preco(conn)
+        
+        
         elif opcao == "0":
             print("Saindo...")
             break
@@ -1270,6 +1327,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
 
 """
 
