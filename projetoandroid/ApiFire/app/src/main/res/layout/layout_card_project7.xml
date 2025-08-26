@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_weight="1"
+    android:id="@+id/cardViewN">
+
+    <LinearLayout
+        android:layout_width="417dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewTituloN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Projeto 7 - BANCO SIMULADOR"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listViewTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="320dp" />
+
+        <EditText
+            android:id="@+id/editTextAccountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Account Number" />
+
+        <EditText
+            android:id="@+id/editTextBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Balance"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/buttonDeposit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deposit" />
+
+        <Button
+            android:id="@+id/buttonWithdraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Withdraw" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

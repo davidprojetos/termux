@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <include layout="@layout/layout_card_project1" />
+            <include layout="@layout/layout_card_project2" />
+            <include layout="@layout/layout_card_project3" />
+            <include layout="@layout/layout_card_project4" />
+            <include layout="@layout/layout_card_project5" />
+            <include layout="@layout/layout_card_project6" />
+            <include layout="@layout/layout_card_project7" />
+            <include layout="@layout/layout_card_project8" />
+       
+        </LinearLayout>
+        
+    </HorizontalScrollView>
+
+</LinearLayout>

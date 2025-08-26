@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="1080px"
+    android:layout_width="1080px"
+    android:layout_margin="4dp"
+    android:layout_weight="1"
+    android:id="@+id/cardView3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewTitulo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Projeto 3 - SORTEADOR"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewUltimoSorteado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Último Número Sorteado: "
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/listViewNumerosSorteados"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonSortear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Sortear Novo Número" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

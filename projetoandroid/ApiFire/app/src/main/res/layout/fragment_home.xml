@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="?android:attr/colorBackground">
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile_image"/>
+
+    <TextView
+        android:id="@+id/about_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Sobre Mim"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/textColorPrimary" />
+
+    <TextView
+        android:id="@+id/about_me_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_me"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        android:text="Desenvolvedor Full Stack Jr.\nSempre fui apaixonado por tecnologia, desde criança sonhava em um dia trabalhar com um COMPUTADOR. Até que aos 12 anos ganhei um computador com defeito do meu tio e tive a grande missão de concertar despois disso nunca mais parei."
+        android:textSize="16sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:elevation="2dp" />
+</RelativeLayout>
