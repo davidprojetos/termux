@@ -13,7 +13,7 @@
 ## Config git
 ```sh
   git init
-  git clone git@github.com:davidprojetos/?.git
+  git clone git@github.com:davidprojetos/termux.git
   git push --set-upstream origin main
 ```
 
