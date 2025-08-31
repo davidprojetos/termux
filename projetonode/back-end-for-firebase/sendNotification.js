@@ -5,7 +5,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-const registrationToken = 'fbvOfiARTw6SanQDj_G2XJ:APA91bElGoHQCeej3EN1VRnYWPaRcFjgXf6WAm1-vtv3HQ7-WlUY0Kdddqz-GGqo-xjfxtHctG9-4MX4gWrCq3S6GNzsPJfk8bAXbRqPDcQdxnHzKOUzFM8';
+const registrationToken = 'fU7ZL0m_SO2YIJ4g7kos6N:APA91bG989QSuG4KgTejZQXdHR1CwVt0ySIE8fNNnLx_5LoO9w-xg1VOEPMXcIiXHcYpWarPiyJrir8G6xLyoatnXaljlvoYsDbAJcuRnyyVwA-RzenYJ_w';
 
 const message = {
   notification: {

@@ -1,4 +1,3 @@
-// MyFirebaseMessagingService.java
 package br.com.davidsousadev;
 
 import android.app.NotificationChannel;
@@ -17,77 +16,91 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-/**
- * Nosso serviço que recebe mensagens FCM.
- */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "FCMService";
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-        // Chamado quando a mensagem (data ou notification) é recebida.
         Log.d(TAG, "Mensagem recebida de: " + remoteMessage.getFrom());
 
-        // Se a mensagem contiver payload de dados (data payload).
-        if (remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Payload de dados: " + remoteMessage.getData());
-            // Você pode processar dados personalizados aqui (p.ex., salvar em DB).
-        }
+        String titulo = null;
+        String corpo = null;
+        String tipo = null;
+        String idMensagem = null;
+        String url = null;
 
-        // Se a mensagem contiver payload de notificação (notification payload).
         if (remoteMessage.getNotification() != null) {
-            String titulo = remoteMessage.getNotification().getTitle();
-            String corpo = remoteMessage.getNotification().getBody();
-            Log.d(TAG, "Notificação – Título: " + titulo + ", Corpo: " + corpo);
-
-            // Exibir notificação local
-            enviarNotificacao(titulo, corpo);
+            titulo = remoteMessage.getNotification().getTitle();
+            corpo = remoteMessage.getNotification().getBody();
         }
+
+        if (!remoteMessage.getData().isEmpty()) {
+            Log.d(TAG, "Payload de dados: " + remoteMessage.getData());
+            tipo = remoteMessage.getData().get("tipo");
+            idMensagem = remoteMessage.getData().get("id_mensagem");
+            url = remoteMessage.getData().get("url");
+        }
+
+        enviarNotificacao(
+                titulo != null ? titulo : "Nova mensagem",
+                corpo != null ? corpo : "Você recebeu uma notificação",
+                tipo,
+                idMensagem,
+                url
+        );
     }
 
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
-        // Chamado quando um novo token é gerado (ou token atualizado).
         Log.d(TAG, "Novo token FCM: " + token);
-        // Aqui, faça lógica para enviar esse token ao seu servidor, se necessário.
     }
 
-    /**
-     * Método auxiliar para exibir notificação local.
-     */
-    private void enviarNotificacao(String titulo, String corpo) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    private void enviarNotificacao(String titulo, String corpo, String tipo, String idMensagem, String url) {
+        Intent intent;
+
+        if ("mensagem".equals(tipo)) {
+            intent = new Intent(this, ChatActivity.class);
+        } else {
+            intent = new Intent(this, MainActivity.class);
+        }
+
+        intent.putExtra("tipo", tipo);
+        intent.putExtra("id_mensagem", idMensagem);
+        intent.putExtra("url", url);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(
-                this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
+                this, 0, intent,
+                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE
+        );
 
         String canalId = "canal_default";
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder notificBuilder =
                 new NotificationCompat.Builder(this, canalId)
-                        .setSmallIcon(R.drawable.ic_notification) // Ícone em res/drawable/ic_notification.png
+                        .setSmallIcon(R.drawable.ic_notification)
                         .setContentTitle(titulo)
                         .setContentText(corpo)
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(corpo))
                         .setAutoCancel(true)
                         .setSound(defaultSound)
-                        .setContentIntent(pendingIntent);
+                        .setContentIntent(pendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        // No Android 8.0+ é preciso criar canal de notificação
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel canal = new NotificationChannel(
                     canalId,
                     "Canal Padrão",
-                    NotificationManager.IMPORTANCE_DEFAULT);
+                    NotificationManager.IMPORTANCE_HIGH
+            );
             notificationManager.createNotificationChannel(canal);
         }
 
-        notificationManager.notify(0 /* ID da notificação */, notificBuilder.build());
+        notificationManager.notify((int) System.currentTimeMillis(), notificBuilder.build());
     }
 }
