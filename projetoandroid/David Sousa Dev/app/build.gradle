@@ -1,0 +1,48 @@
+// app/build.gradle 
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services' // Plugin do Firebase
+}
+
+android {
+    namespace 'br.com.davidsousadev'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "br.com.davidsousadev"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // AndroidX
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.9.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+
+    // Firebase Cloud Messaging
+    implementation "com.google.firebase:firebase-messaging:23.4.1"
+}

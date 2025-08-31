@@ -1,6 +1,4 @@
 const admin = require('firebase-admin');
-
-// Caminho para o JSON de conta de serviço
 const serviceAccount = require('./firebase.json');
 
 admin.initializeApp({
@@ -15,9 +13,9 @@ const message = {
     body: 'Você recebeu uma nova mensagem!',
   },
   data: {
-    tipo: 'mensagem',      // usado no MyFirebaseMessagingService
-    id_mensagem: '789',    // será lido no ChatActivity
-    abrir_chat: 'true',    // flag extra para abrir a tela de chat
+    tipo: 'mensagem',        // indica que é mensagem para abrir ChatActivity
+    id_mensagem: '789',      // id da mensagem
+    //url: 'https://meu-portifolio-david.vercel.app/' // opcional, abre no navegador
   },
   android: {
     priority: 'high',
@@ -25,7 +23,7 @@ const message = {
       sound: 'default',
       color: '#0000FF',
       channelId: 'mensagens_importantes',
-      clickAction: 'CHAT_ACTIVITY', // 🔑 usado no AndroidManifest
+      clickAction: 'CHAT_ACTIVITY' // abre ChatActivity
     },
   },
   token: registrationToken,
