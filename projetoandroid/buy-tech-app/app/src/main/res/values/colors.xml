@@ -1,0 +1,16 @@
+<resources>
+    <color name="colorPrimary">#004AAD</color>
+    <color name="colorPrimaryVariant">#003580</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorSecondary">#FF9800</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+
+    <color name="statusBarColor">#004AAD</color>
+    <color name="navigationBarColor">#004AAD</color>
+</resources>
