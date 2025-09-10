@@ -55,5 +55,15 @@
             </intent-filter>
         </activity>
 
+        <!-- Activity de cadastro -->
+        <activity
+            android:name=".CadastroActivity"
+            android:exported="true" />
+
+        <!-- Activity de login -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
     </application>
 </manifest>

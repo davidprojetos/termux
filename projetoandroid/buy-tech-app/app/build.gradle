@@ -1,4 +1,4 @@
-// app/build.gradle 
+// app/build.gradle
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services' // Plugin do Firebase
@@ -46,7 +46,11 @@ dependencies {
     // Firebase Cloud Messaging
     implementation "com.google.firebase:firebase-messaging:23.4.1"
     
-    // 
+    // Glide (para imagens)
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // OkHttp (para requisições HTTP - login/cadastro)
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
 }

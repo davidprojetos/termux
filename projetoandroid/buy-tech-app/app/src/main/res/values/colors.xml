@@ -13,4 +13,8 @@
 
     <color name="statusBarColor">#004AAD</color>
     <color name="navigationBarColor">#004AAD</color>
+
+    <!-- cores usadas no MainActivity -->
+    <color name="teal_700">#018786</color>
+    <color name="black">#000000</color>
 </resources>
