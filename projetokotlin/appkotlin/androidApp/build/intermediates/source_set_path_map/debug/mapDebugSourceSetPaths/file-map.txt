@@ -1,0 +1,8 @@
+com.appkmm.android.androidApp-pngs-0 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/build/generated/res/pngs/debug
+com.appkmm.android.androidApp-resValues-1 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/build/generated/res/resValues/debug
+com.appkmm.android.androidApp-packageDebugResources-2 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.appkmm.android.androidApp-packageDebugResources-3 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.appkmm.android.androidApp-debug-4 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/build/intermediates/merged_res/debug/mergeDebugResources
+com.appkmm.android.androidApp-debug-5 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/src/debug/res
+com.appkmm.android.androidApp-main-6 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/androidApp/src/main/res
+com.appkmm.android.androidApp-debug-7 /data/data/com.termux/files/home/termux/projetokotlin/appkotlin/shared/build/intermediates/packaged_res/debug/packageDebugResources

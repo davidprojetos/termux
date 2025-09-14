@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "org.example.buytech.composeApp-debug-45:/mipmap_ic_launcher.png.flat",
+        "source": "org.example.buytech.composeApp-androidMain-47:/mipmap/ic_launcher.png"
+    },
+    {
+        "merged": "org.example.buytech.composeApp-debug-45:/mipmap_ic_launcher_round.png.flat",
+        "source": "org.example.buytech.composeApp-androidMain-47:/mipmap/ic_launcher_round.png"
+    }
+]
