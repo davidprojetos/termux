@@ -4,3 +4,7 @@ projetoflask/projeto002/downloads
 
 firebase.json
 google-services.json
+
+# Ignore arquivos compilados do Python
+__pycache__/
+*.py[cod]
