@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
-INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-22:12
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-25:12
+INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-25:12
+INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-25:12
+INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:1-25:12
 MERGED from [org.jetbrains.compose.components:components-resources-android:1.6.11] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/5f83aa6b1340ced7ba6d6846a3e8be48/transformed/library-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/28ac6c0426c1bc2ed9bdb0fd1c4b17d0/transformed/material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.0] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/00fbac80d7b1f1e463ffd508c2057cb0/transformed/material-release/AndroidManifest.xml:2:1-7:12
@@ -52,6 +52,7 @@ MERGED from [androidx.tracing:tracing:1.0.0] /data/data/com.termux/files/home/.g
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/2251accc0f5ecd122176be0f648b5e24/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/045bd4234acf494f1cda21c033c0f90b/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 	package
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:3:5-34
 		INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml
 	android:versionName
 		INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml
@@ -59,9 +60,13 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /data/data/com.termux/fil
 		INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml
 	xmlns:android
 		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:6:22-74
 application
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
-INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:4:5-20:19
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:8:5-23:19
+INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:8:5-23:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.7] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/74ca283975d3d402db370c01ecc68f04/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.7] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/74ca283975d3d402db370c01ecc68f04/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/066933ff4e3f1c7e05d37cc0d6b6caa7/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
@@ -81,33 +86,33 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /data/data/com.termux/files
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /data/data/com.termux/files/home/.gradle/caches/8.14.3/transforms/3983856da1aca7aa44b5921c64222fbd/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:9:9-35
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:7:9-41
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:8:9-54
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:6:9-43
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:5:9-35
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:10:9-72
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:14:9-72
 activity#org.example.buytech.MainActivity
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:11:9-19:20
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:15:9-22:20
 	android:exported
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:12:13-36
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:16:13-36
 	android:name
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:13:13-41
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:14:13-18:29
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:15:17-69
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:15:25-66
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:17:17-77
+ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:17:27-74
+		ADDED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml:20:27-74
 uses-sdk
 INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /data/data/com.termux/files/home/termux/projetokotlin/buyTech/buyTech/composeApp/src/androidMain/AndroidManifest.xml

@@ -8,6 +8,9 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <!-- Permissão para postar notificações -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <permission
         android:name="org.example.buytech.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
