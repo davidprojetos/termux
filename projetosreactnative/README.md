@@ -3,7 +3,7 @@
 
 termux
 
-npx @react-native-community/cli init novoappnativeexemplo --version 0.80.0
+npx @react-native-community/cli init novoappnativeexemplo
 
 adb install -r app/build/outputs/apk/release/app-release.apk
 
@@ -14,7 +14,7 @@ cd novoAppNative/
 npx expo prebuild
 npm start
 cd android/
-./gradlew assembleDebug
+clear && ./gradlew clean assembleRelease
 
 adb devices
 adb connect 192.168.18.4:36259
@@ -24,7 +24,7 @@ mv my-release-key.keystore app/
 
 adb install /home/david/Documentos/apps/novoAppNative/android/app/build/outputs/apk/debug/app-x86-debug.apk
 
-android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/34.0.4/aapt2
+android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/opt/Android/sdk/build-tools/35.0.0/aapt2
 
 versao compativel 
 
